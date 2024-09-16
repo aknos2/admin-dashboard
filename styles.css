@@ -1,7 +1,22 @@
+@font-face {
+    font-family: Intro-rust;
+    src: url(./fonts/introrustg_base2line_macroman/introrustg-base2line-webfont.woff)
+}
+
+@font-face {
+    font-family: Intro;
+    src: url(./fonts/InputMonoCondensed-BlackItalic.ttf)
+}
+
+
 :root {
     --header-color: #09090b;
     --player-fontcolor: antiquewhite;
     --purple-color: #b271ce;
+    --sidebar-color: #09090b;
+    --sidebar-shadow: 3px 0px 2px rgba(235, 225, 246, 0.8);
+    --nav-link-color:rgb(88, 40, 101, 0.8);
+    --report-desk-color: #c3c147;
 }
 
 *,
@@ -10,6 +25,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: DejaVu Sans Mono, Source Code Pro;
 }
 
 a {
@@ -24,6 +43,11 @@ ul {
     list-style-type: none;
 }
 
+hr {
+    margin: 10px 10px;
+
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -34,6 +58,8 @@ ul {
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: var(--header-color);
+    box-shadow: 1px 1px 5px rgba(117, 32, 117, 0.5);
+    position: relative;
 }
 
 .header-menu1 {
@@ -184,6 +210,11 @@ button:hover {
     place-items: center;
     margin-right: 10px;
     place-items: center;
+    background-color: rgba(32, 53, 108, 0.766);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(200, 198, 69);
 }
 
 .nav-link a {
@@ -192,6 +223,12 @@ button:hover {
     text-shadow: 2px 2px 5px var(--purple-color);
     grid-column: 1 / 4;
     position: relative;
+    font-size: 1.5rem;
+    background-color: var(--nav-link-color);
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(200, 198, 69);
+    box-shadow: 1px 1px 1px rgb(163, 161, 57);
 }
 
 .nav-link #quests::before {
@@ -246,11 +283,19 @@ button:hover {
     grid-row: 1 /3;
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
+    font-family: Intro;
+    font-size: 2rem;
+    text-shadow: var(--sidebar-shadow);
+}
+
+.sidebar a {
+    color: var(--sidebar-color) !important;
 }
 
 .sidebar .logo {
     place-self: center;
-    font-size: 2rem;
+    font-family: Intro-rust, Roboto, sans-serif;
+    font-size: 3.5rem;
 }
 
 .sidebar-menu1 {
@@ -259,6 +304,7 @@ button:hover {
     grid-template-columns: 1;
     justify-content: center;
     gap: 15px;
+    padding: 15px;
 }
 
 .sidebar-menu2 {
@@ -273,6 +319,8 @@ button:hover {
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: var(--header-color);
+    line-height: 1.5rem;
+    padding-top: 15px;
 }
 
 .main-column-left {
@@ -289,6 +337,13 @@ button:hover {
 .main-column-left > h2:first-of-type{
     margin-left: 30px;
     margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid yellow;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--report-desk-color);
+    color: var(--sidebar-color)
 }
 
 .main-column-left .column-cards {
@@ -302,17 +357,31 @@ button:hover {
 }
 
 .cards {
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 10px;
     height: 200px;
+    overflow: auto;
+    box-shadow: 1px 1px 1px rgb(173, 173, 168);
+    border-left: 2px solid var(--report-desk-color);
+}
+
+.cards:hover {
+    border: 2px solid rgb(211, 24, 24);
+    box-shadow: 1px 1px 1px rgb(173, 173, 168);
+    border-left: 2px solid var(--report-desk-color);
+}
+
+.cards h2 {
+    margin-top: 5px;
 }
 
 .cards p {
     padding: 10px;
     color: white;
+    text-shadow: rgb(36, 35, 35) 1px 0 10px;
 }
 
-/* #card1 {
+#card1 {
     background-image: url(./imgs/oleg-onchky-JSGCnS31rWc-unsplash.jpg);
     background-size: cover;
 }
@@ -342,7 +411,7 @@ button:hover {
     background-image: url(./imgs/cheng-feng-gR3oLVM0aqM-unsplash.jpg);
     background-size: cover;
     background-position: 20%;
-} */
+} 
 
 
 .main-column-right {
@@ -359,6 +428,7 @@ button:hover {
     color: var(--player-fontcolor);
     text-align: center;
     margin-bottom: 20px;
+    text-shadow: 1px 0px 1px rgb(222, 123, 186);
 }
 
 #updates {
@@ -374,8 +444,15 @@ button:hover {
 .updates-block {
     border: 1px solid white;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(226, 213, 232);
     opacity: 0.9;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    height: 290px;
+    overflow: scroll;
+    padding: 15px;
+    font-size: 0.9rem;
 }
 
 #top-players {
@@ -390,12 +467,19 @@ button:hover {
 .top-players-block {
     border: 1px solid white;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(226, 213, 232);
     opacity: 0.9;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     place-items: start;
     padding-top: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+}
+
+#points p:first-of-type {
+    margin-bottom: -5px;
+    font-weight: bold;
 }
 
 #one {
