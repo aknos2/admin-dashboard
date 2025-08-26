@@ -1,6 +1,15 @@
 # admin-dashboard
+
 Create a page layout using grid. 7th project of Odin Project.
 The goal of the project is to create a page mainly using Grid. I will use all the skills that I've learned so far from this intermediate course. The project will only use HTML and CSS. Not a full responsive design.
+
+## Website url
+
+https://aknos2.github.io/admin-dashboard/
+
+## Screenshots
+
+<img src="./imgs/screenshot.png" alt="screenshot">
 
 ### Image Credits
 
@@ -23,4 +32,3 @@ Florian Olivo https://unsplash.com/photos/people-standing-on-the-street-with-red
 Aleksandr Popov https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-neon-sign-3InMDrsuYrk?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash
 
 cheng feng https://unsplash.com/photos/concrete-road-with-light-lamp-post-gR3oLVM0aqM?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash
-
